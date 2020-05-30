@@ -1,0 +1,36 @@
+bool helper(char input[],int si, int ei){
+	if(si >= ei){
+        return true;
+	}
+	if(input[si]!=input[ei]){
+		return false;
+	}
+	return helper(input,si+1,ei-1);
+}
+
+bool checkPalindrome(char input[]){
+	return helper(input,0,strlen(input)-1);
+}
+int main(){
+	char input[50]="acbbca";
+	cout<<checkPalindrome(input)<<endl;
+}*/
+
+
+/*
+//Sum of all the digits of a number
+#include<iostream>
+using namespace std;
+int digitsSum(long n){
+	if(n==0){
+		return 0;
+	}
+	int ans=digitsSum(n/10);
+	return ans+(n%10);
+}
+int main(){
+	long n=208616263636;
+
+	cout<<digitsSum(n)<<endl;
+
+}
